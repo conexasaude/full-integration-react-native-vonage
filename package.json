@@ -9,7 +9,10 @@
     "preinstall": "npm config set @conexasaude:registry https://gitlab.com/api/v4/packages/npm/ && npm config set -- '//gitlab.com/api/v4/packages/npm/:_authToken' 'q5q41dTGVS-dbx_zrzB9' && npm config set -- '//gitlab.com/api/v4/projects/28272521/packages/npm/:_authToken' 'q5q41dTGVS-dbx_zrzB9'",
     "lint": "eslint .",
     "postinstall": "npx jetify",
-    "pod-install": "cd ios && rm Podfile.lock && npx pod-install"
+    "pod-install": "cd ios && rm Podfile.lock && npx pod-install",
+
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios"
 
 
   },
