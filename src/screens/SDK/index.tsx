@@ -42,15 +42,6 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
 
   useEffect(() => {
     try {
-      const config = {
-        headers: {},
-      };
-
-      const body = {
-        // data: scheduledNoPayment.dateTime,
-        // token: props?.rescheduleAppointmentToken,
-      };
-
       apiVonageURL
         .post('/criar/CONEXA/false')
         .then((response) => {
