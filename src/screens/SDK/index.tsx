@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import axios from 'axios';
+import { apiVonageURL } from '@root/services/api';
 
 import { Logo } from '@components/Logo';
 import useStyles from './styles';
@@ -39,11 +40,6 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
     btnHelp,
   } = RootStyles;
 
-  const apiVonage = axios.create({
-    baseURL: 'https://hml-meet.conexasaude.com.br/api/integration/vonage',
-    validateStatus: () => true,
-  });
-
   useEffect(() => {
     try {
       const config = {
@@ -55,7 +51,7 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
         // token: props?.rescheduleAppointmentToken,
       };
 
-      apiVonage
+      apiVonageURL
         .post('/criar/CONEXA/false')
         .then((response) => {
           if (response.status === 200) {
@@ -82,7 +78,7 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
         isDocpass: false,
       };
 
-      apiVonage
+      apiVonageURL
         .post('/obter/url/paciente/CONEXA', body)
         .then((response) => {
           if (response.status === 200) {

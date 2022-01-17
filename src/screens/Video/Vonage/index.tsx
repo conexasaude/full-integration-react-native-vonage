@@ -15,7 +15,7 @@ import {
 import VideoControl from '../../../components/VideoControl';
 
 import Room from './Room';
-import { apiVonage, apiKeyVonage } from '../../../services/api';
+import { apiVonageURL, apiKeyVonage } from '../../../services/api';
 
 import OverlayLoader from '../../../components/OverlayLoader';
 import SimpleModal from '../../../components/SimpleModal';
@@ -268,7 +268,7 @@ export default function Vonage({ route, navigation }) {
 
   const checkCall = () => {
     axios
-      .get(`${apiVonage}/status/${route.params.id_chamada}`)
+      .get(`${apiVonageURL}/status/${route.params.id_chamada}`)
       .then((result) => {
         if (result.data) {
           endCall();
