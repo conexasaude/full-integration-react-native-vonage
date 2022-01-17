@@ -70,6 +70,7 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
         });
     } catch (error) {
       console.log(error);
+      console.log(error);
     }
   }, []);
 
