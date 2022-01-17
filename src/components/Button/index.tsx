@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext } from 'react';
+import React, { FunctionComponent } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { css } from '@emotion/native';
 
@@ -8,7 +8,6 @@ import variables from '@root/variables';
 import { ButtonProps, ButtonSize } from './types';
 import useStyles from './styles';
 import { Icon } from './Icon';
-import { ThemeContext } from '@root/theme';
 
 const Button: FunctionComponent<ButtonProps> = ({
   onPress,
