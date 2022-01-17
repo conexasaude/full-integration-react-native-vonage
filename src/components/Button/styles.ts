@@ -1,8 +1,6 @@
 import { makeStyles } from '@conexasaude/styles';
 import { css } from '@emotion/native';
-import { ThemeContext } from '@root/theme';
 import variables from '@root/variables';
-import { useContext } from 'react';
 
 const useStyles = makeStyles({
   RootStyles: () => ({
