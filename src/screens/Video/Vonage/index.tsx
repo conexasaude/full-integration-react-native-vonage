@@ -39,8 +39,6 @@ export default function Vonage({ route, navigation }) {
   const [cameraPermission, setCameraPermission] = useState(false);
   const [micPermission, setMicPermission] = useState(false);
   const [newMessagesAmount, setNewMessagesAmount] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [messages, setMessages] = useState([]);
 
   let credentialsTimeout = null;
 
@@ -51,9 +49,6 @@ export default function Vonage({ route, navigation }) {
   useEffect(() => {
     if (micPermission && cameraPermission) {
       credentialsTimeout = setTimeout(() => {
-        console.log(route.params.id_chamada);
-        console.log(route.params.tokenParticipante);
-
         setToken(route.params.tokenParticipante);
         setSessionId(route.params.id_chamada);
         // getCredentials();
