@@ -1,4 +1,4 @@
-# 📚 SDK Vonage Overview
+# 📚 SDK React Native Vonage Overview
 
 ## <img src="icons/iconset-conexa-prod/mipmap-hdpi/ic_launcher_round.png" width="30"> CONEXA SAÚDE
 
