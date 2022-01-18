@@ -2,7 +2,7 @@
 
 ## <img src="icons/iconset-conexa-prod/mipmap-hdpi/ic_launcher_round.png" width="30"> CONEXA SAÚDE
 
-### To run this poc follow this commands:
+### To run this poc follow these commands:
 
     git clone https://gitlab.com/conexasaude/conexa-b2c/poc-s/poc-full-integration-mobile-vonage.git
     yarn install
