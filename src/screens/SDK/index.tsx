@@ -94,7 +94,6 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
         id_chamada: callToken,
         tokenParticipante,
         idAtendimento: 123,
-        nomeProfissional: 'teste',
       });
     }
   };
