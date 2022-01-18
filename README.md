@@ -18,6 +18,8 @@
 
     Your app will need generate this token in your app flow to connect with professional.
 
+
+
 #### Receiving the professional url
 
     Thereafter, you will need to get this token and do a post request to:
@@ -34,6 +36,8 @@
     }
 
     You will receive the url to connect with the pacient.
+
+    Note: You userId should be same of the app to enter in same video call.
 
 #### Continuing the app flow
 
