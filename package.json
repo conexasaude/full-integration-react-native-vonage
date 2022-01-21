@@ -6,7 +6,6 @@
 
     "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
     "test": "jest",
-    "preinstall": "npm config set @conexasaude:registry https://gitlab.com/api/v4/packages/npm/ && npm config set -- '//gitlab.com/api/v4/packages/npm/:_authToken' 'q5q41dTGVS-dbx_zrzB9' && npm config set -- '//gitlab.com/api/v4/projects/28272521/packages/npm/:_authToken' 'q5q41dTGVS-dbx_zrzB9'",
     "lint": "eslint .",
     "postinstall": "npx jetify",
     "pod-install": "cd ios && rm Podfile.lock && npx pod-install",
@@ -23,7 +22,6 @@
     "@react-native-async-storage/async-storage": "1.15.4",
     "@react-native-clipboard/clipboard": "1.8.2",
     "@react-native-community/checkbox": "^0.5.7",
-    "@conexasaude/styles": "^0.2.0-beta.2",
     "@react-native-community/hooks": "2.6.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-community/netinfo": "^6.0.2",

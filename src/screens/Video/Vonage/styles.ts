@@ -1,8 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
-import { makeStyles } from '@conexasaude/styles';
 import variables from '@root/variables';
-import { css } from '@emotion/native';
-import { useContext } from 'react';
 
 const { width } = Dimensions.get('window');
 const { height } = Dimensions.get('window');

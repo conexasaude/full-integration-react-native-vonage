@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useEffect } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import { Animated, ImageStyle } from 'react-native';
 
 import { Spinner, run } from '@util/animations';
@@ -6,7 +6,6 @@ import { Spinner, run } from '@util/animations';
 import loadingSource from '@icons/loader.png';
 
 import variables from '@root/variables';
-import { ThemeContext } from '@root/theme';
 
 interface LoaderProps {
   loading: boolean;
@@ -21,8 +20,7 @@ export const Loader: FunctionComponent<LoaderProps> = ({
   style,
   outline,
 }) => {
-  const { theme } = useContext(ThemeContext);
-  const { colors } = theme;
+
 
   useEffect(() => {
     if (loading) {
@@ -43,7 +41,7 @@ export const Loader: FunctionComponent<LoaderProps> = ({
         {
           transform: [{ rotate: Spinner }],
           alignSelf: 'center',
-          tintColor: outline ? colors.primary[500] : variables.defaultWhite,
+          tintColor: outline ? variables.primary500 : variables.defaultWhite,
           width: getLoaderSize(size),
           height: getLoaderSize(size),
         },

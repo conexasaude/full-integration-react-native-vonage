@@ -12,7 +12,7 @@ import axios from 'axios';
 import { apiVonageURL } from '@root/services/api';
 
 import { Logo } from '@components/Logo';
-import useStyles from './styles';
+import styles from './styles';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 import { Inputfield } from '@root/components/Inputfield';
@@ -28,17 +28,7 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
 
   const [loading, setLoading] = useState(false);
 
-  const { RootStyles } = useStyles();
 
-  const {
-    mainContainer,
-    container,
-    inputContainer,
-    logoContainer,
-    shadowStyle,
-    inputContainerTitle,
-    btnHelp,
-  } = RootStyles;
 
   useEffect(() => {
     try {
@@ -109,17 +99,17 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
         style={{ height: 50, width: 50 }}
       />
 
-      <ScrollView contentContainerStyle={mainContainer} style={{ flex: 1 }}>
+      <ScrollView contentContainerStyle={styles.mainContainer} style={{ flex: 1 }}>
         <View
           style={[
-            container,
+            styles.container,
             {
               paddingTop:
                 Platform.OS === 'ios' ? getStatusBarHeight() + 15 : 15,
             },
           ]}
         >
-          <Logo width={170} height={35} style={logoContainer} />
+          <Logo width={170} height={35} style={styles.logoContainer} />
           <Text
             style={{
               alignItems: 'center',
@@ -132,8 +122,8 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
             Conecte-se à sua saúde
           </Text>
         </View>
-        <View style={[inputContainer, shadowStyle]}>
-          <Text style={inputContainerTitle}>SDK Video Chamada</Text>
+        <View style={[styles.inputContainer, styles.shadowStyle]}>
+          <Text style={styles.inputContainerTitle}>SDK Video Chamada</Text>
 
           <>
             <Inputfield
@@ -154,7 +144,7 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
         </View>
         <View
           style={[
-            btnHelp,
+            styles.btnHelp,
             {
               marginBottom:
                 Platform.OS === 'ios' ? getStatusBarHeight() + 105 : 105,

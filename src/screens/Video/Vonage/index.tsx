@@ -18,7 +18,6 @@ import Room from './Room';
 import { apiVonageURL, apiKeyVonage } from '../../../services/api';
 
 import OverlayLoader from '../../../components/OverlayLoader';
-import SimpleModal from '../../../components/SimpleModal';
 import styles from './styles';
 
 LogBox.ignoreAllLogs();
@@ -297,11 +296,7 @@ export default function Vonage({ route, navigation }) {
       )}
 
       <View style={{ flex: 1 }}>
-        <SimpleModal
-          modalVisible={errorPermission}
-          modalMessage="Você precisa permitir o uso da câmera e microfone."
-          onPress={() => goToSettings()}
-        />
+
 
         {sessionId && token && (
           <OTSession

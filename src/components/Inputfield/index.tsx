@@ -17,7 +17,7 @@ import {
 import { ReactNativeStyle } from '@emotion/native';
 import { FloatingLabelInput } from 'react-native-floating-label-input';
 
-import useStyles from './styles';
+import styles from './styles';
 import { Text } from 'react-native-elements';
 import variables from '@root/variables';
 import { ThemeContext } from '@root/theme';
@@ -87,24 +87,15 @@ const Inputfield: ForwardRefExoticComponent<InputProps> = forwardRef(
     },
     ref
   ) => {
-    const { theme } = useContext(ThemeContext);
-    const { colors } = theme;
-    const { RootStyles } = useStyles();
-    const {
-      container,
-      inputStyles,
-      labelStyles,
-      iconContainer,
-      iconStyles,
-      textError,
-    } = RootStyles;
+
+
 
     const [focused, setFocused] = useState(false);
     const [valueState, setValueState] = useState(
       maskInitialValue(initialValue)
     );
     const [errorEmpty, setErrorEmpty] = useState(false);
-    const [color, setColor] = useState(colors.neutral[100]);
+    const [color, setColor] = useState(variables.neutral100);
     const [mask, setMask] = useState<string | undefined>();
     const [keyboardType, setKeyboardType] = useState<KeyboardType>('default');
 
@@ -156,17 +147,17 @@ const Inputfield: ForwardRefExoticComponent<InputProps> = forwardRef(
 
     useEffect(() => {
       if (success) {
-        setColor(colors.success[600]);
+        setColor(variables.success600);
       } else if (isValid === false || errorEmpty === true) {
-        setColor(colors.danger[500]);
+        setColor(variables.danger500);
       } else if (focused) {
-        setColor(colors.primary[500]);
+        setColor(variables.primary500);
       } else if (rest.editable === false) {
-        setColor(colors.neutral[400]);
+        setColor(variables.neutral400);
       } else if (valueState) {
-        setColor(colors.neutral[800]);
+        setColor(variables.neutral800);
       } else {
-        setColor(colors.neutral[500]);
+        setColor(variables.neutral500);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isValid, focused, success]);
@@ -304,7 +295,7 @@ const Inputfield: ForwardRefExoticComponent<InputProps> = forwardRef(
     }
 
     return (
-      <View style={[container, style]}>
+      <View style={[styles.container, style]}>
         <FloatingLabelInput
           editable={!disabled}
           {...rest}
@@ -327,7 +318,7 @@ const Inputfield: ForwardRefExoticComponent<InputProps> = forwardRef(
           onChangeText={(v) => {
             changingText(v);
           }}
-          hintTextColor={colors.neutral[400]}
+          hintTextColor={variables.neutral400}
           hint={placeholder}
           autoCapitalize={
             maskType === 'email' || password ? 'none' : 'sentences'
@@ -344,14 +335,14 @@ const Inputfield: ForwardRefExoticComponent<InputProps> = forwardRef(
             colorBlurred: color,
             fontSizeFocused: 14,
           }}
-          labelStyles={labelStyles}
-          inputStyles={inputStyles}
+          labelStyles={styles.labelStyles}
+          inputStyles={styles.inputStyles}
           rightComponent={
             rightComponent ||
             (!password && icon ? (
-              <View style={iconContainer}>
+              <View style={styles.iconContainer}>
                 <TouchableOpacity onPress={handlePress}>
-                  <Image style={iconStyles} source={icon} />
+                  <Image style={styles.iconStyles} source={icon} />
                 </TouchableOpacity>
               </View>
             ) : undefined)
@@ -377,7 +368,7 @@ const Inputfield: ForwardRefExoticComponent<InputProps> = forwardRef(
         />
 
         {(!isValid || errorEmpty) && (
-          <Text style={textError}>
+          <Text style={styles.textError}>
             {errorEmpty ? 'Este campo é obrigatório' : errorMessage}
           </Text>
         )}

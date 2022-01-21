@@ -4,7 +4,7 @@ import { View, Image } from 'react-native';
 import { LogoImg } from '@root/variables';
 import { LogoProps } from './types';
 
-import useStyles from './styles';
+import styles from './styles';
 import { SvgImage } from '../SvgImage';
 
 export const Logo: FunctionComponent<LogoProps> = ({
@@ -14,7 +14,6 @@ export const Logo: FunctionComponent<LogoProps> = ({
   style,
   ...rest
 }) => {
-  const { container, imgStyle } = useStyles();
   const [imageSource, setImageSource] = useState<boolean>(true);
 
   useEffect(() => {
@@ -36,10 +35,10 @@ export const Logo: FunctionComponent<LogoProps> = ({
   }, [source]);
 
   return (
-    <View style={[container, style]}>
+    <View style={[styles.container, style]}>
       {typeof source === 'string' && source && imageSource ? (
         <Image
-          style={imgStyle}
+          style={styles.imgStyle}
           source={{
             uri: `${source}?random=${Math.random().toString(36).substring(7)}`,
           }}
@@ -51,7 +50,7 @@ export const Logo: FunctionComponent<LogoProps> = ({
         />
       ) : (
         <SvgImage
-          svg={<LogoImg style={imgStyle} width={width} height={height} />}
+          svg={<LogoImg style={styles.imgStyle} width={width} height={height} />}
         />
       )}
     </View>

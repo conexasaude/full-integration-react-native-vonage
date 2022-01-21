@@ -6,7 +6,7 @@ import { Loader } from '@components/Loader';
 
 import variables from '@root/variables';
 import { ButtonProps, ButtonSize } from './types';
-import useStyles from './styles';
+import styles from './styles';
 import { Icon } from './Icon';
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -26,20 +26,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   textStyle,
   ...rest
 }) => {
-  const { RootStyles } = useStyles();
 
-  const {
-    container,
-    button,
-    containerDisabled,
-    containerOutlineDisabled,
-    iconContainer,
-    loaderStyle,
-    titleStyle,
-    titleStyleDisabled,
-    titleStyleOutlineDisabled,
-    titleStyleAppointment,
-  } = RootStyles;
 
   function getButtonSize(sizeArg: string | undefined): ButtonSize {
     switch (sizeArg) {
@@ -66,7 +53,7 @@ const Button: FunctionComponent<ButtonProps> = ({
     <View
       testID="hero-button"
       style={[
-        container,
+        styles.container,
         style,
         fullWidth &&
           css`
@@ -87,7 +74,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       <TouchableOpacity
         activeOpacity={0.7}
         style={[
-          button,
+          styles.button,
           width
             ? css`
                 min-width: 100px;
@@ -115,8 +102,8 @@ const Button: FunctionComponent<ButtonProps> = ({
             : {
                 backgroundColor: '#0031B2',
               },
-          disabled && containerDisabled,
-          outline && disabled && containerOutlineDisabled,
+          disabled && styles.containerDisabled,
+          outline && disabled && styles.containerOutlineDisabled,
           height
             ? css`
                 height: ${numberToPixels(height)};
@@ -132,9 +119,9 @@ const Button: FunctionComponent<ButtonProps> = ({
         accessibilityRole="button"
         {...rest}
       >
-        <View style={iconContainer}>
+        <View style={styles.iconContainer}>
           {busy && !disabled && (
-            <Loader loading size={size} style={loaderStyle} outline={outline} />
+            <Loader loading size={size} style={styles.loaderStyle} outline={outline} />
           )}
           {icon && !busy && !endIcon && (
             <Icon
@@ -149,22 +136,22 @@ const Button: FunctionComponent<ButtonProps> = ({
             style={
               appoitmentDetailButton
                 ? [
-                    titleStyleAppointment,
+                    styles.titleStyleAppointment,
                     css`
                       font-family: ${variables.nunitoRegular};
                     `,
                     css`
                       font-size: ${getButtonSize(size).fontSize};
                     `,
-                    disabled && titleStyleDisabled,
+                    disabled && styles.titleStyleDisabled,
 
                     outline && {
                       color: '#0031B2',
                     },
-                    outline && disabled && titleStyleOutlineDisabled,
+                    outline && disabled && styles.titleStyleOutlineDisabled,
                   ]
                 : [
-                    titleStyle,
+                    styles.titleStyle,
                     css`
                       font-family: ${variables.nunitoBold};
                     `,
@@ -172,12 +159,12 @@ const Button: FunctionComponent<ButtonProps> = ({
                       css`
                         font-size: ${getButtonSize(size).fontSize};
                       `,
-                    disabled && titleStyleDisabled,
+                    disabled && styles.titleStyleDisabled,
 
                     outline && {
                       color: '#0031B2',
                     },
-                    outline && disabled && titleStyleOutlineDisabled,
+                    outline && disabled && styles.titleStyleOutlineDisabled,
                     textStyle,
                   ]
             }

@@ -13,7 +13,6 @@ import Router from './routes';
 import '@config/ReactotronConfig';
 import { store } from './store';
 
-import SimpleModal from '@components/SimpleModal';
 
 function App() {
   const [showModal, setShowModal] = useState({
@@ -96,17 +95,7 @@ function App() {
     <Provider store={store}>
       <SafeAreaView style={{ flex: 1 }}>
         <Router />
-        <SimpleModal
-          modalVisible={showModal.show}
-          modalMessage={showModal.title}
-          subtitle={showModal.msg}
-          onPress={() => {
-            setShowModal({ show: false });
-            if (showModal.openSettings) {
-              openSettings().catch(() => console.warn('cannot open settings'));
-            }
-          }}
-        />
+
       </SafeAreaView>
     </Provider>
   );
