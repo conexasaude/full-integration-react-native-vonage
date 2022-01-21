@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-<string name="com_appboy_api_key">77279000-4221-4ab2-970f-3f89adf63e8c</string>
-<string translatable="false" name="com_appboy_custom_endpoint">sdk.iad-02.braze.com</string>
-<bool translatable="false" name="com_appboy_firebase_cloud_messaging_registration_enabled">true</bool>
-<string translatable="false" name="com_appboy_firebase_cloud_messaging_sender_id">813180982359</string>
-<bool name="com_appboy_enable_location_collection">true</bool>
-<bool name="com_appboy_handle_push_deep_links_automatically">true</bool>
-</resources>

@@ -207,56 +207,10 @@ export default function Vonage({ route, navigation }) {
   const endCall = () => {
     if (sessionId) {
       OT.disconnectSession(sessionId, () => {
-        navigation.dispatch((state) => {
-          const routes = state.routes.filter((r) => r.name === 'Splash');
-
-          return CommonActions.reset({
-            index: 2,
-            routes: [
-              ...routes,
-              {
-                name: 'BottomTabs',
-              },
-              {
-                name: 'RateProfessional',
-                params: {
-                  appointmentDetail: {
-                    idAtendimento: route.params.idAtendimento,
-                    nomeProfissional: route.params.nomeProfissional,
-                  },
-                },
-              },
-            ],
-          });
-        });
+        console.log('call ended');
       });
     } else {
-      // navigation.replace('RateProfessional', {
-      //   idAtendimento: route.params.idAtendimento,
-      // });
-
-      navigation.dispatch((state) => {
-        const routes = state.routes.filter((r) => r.name === 'Splash');
-
-        return CommonActions.reset({
-          index: 2,
-          routes: [
-            ...routes,
-            {
-              name: 'BottomTabs',
-            },
-            {
-              name: 'RateProfessional',
-              params: {
-                appointmentDetail: {
-                  idAtendimento: route.params.idAtendimento,
-                  nomeProfissional: route.params.nomeProfissional,
-                },
-              },
-            },
-          ],
-        });
-      });
+      console.log('call ended');
     }
   };
 
@@ -296,8 +250,6 @@ export default function Vonage({ route, navigation }) {
       )}
 
       <View style={{ flex: 1 }}>
-
-
         {sessionId && token && (
           <OTSession
             style={{ flex: 1 }}
