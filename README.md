@@ -4,7 +4,7 @@
 
 ### To run this poc follow these commands:
 
-    git clone https://gitlab.com/conexasaude/conexa-b2c/poc-s/poc-full-integration-mobile-vonage.
+    git clone https://github.com/conexasaude/full-integration-react-native-vonage.git
     yarn install
     npx pod-install (ios)
     yarn build:ios
