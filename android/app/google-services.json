@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "524127318753",
+    "firebase_url": "https://conexa-app-hml.firebaseio.com",
+    "project_id": "conexa-app-hml",
+    "storage_bucket": "conexa-app-hml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524127318753:android:070cdd95e794f7197da0",
+        "android_client_info": {
+          "package_name": "br.com.conexasaude"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524127318753-btmj4h1748o1ongpnuhkvhrffau9ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqZTYoLNZHOuZnKSPd5jIe0Mt74KoIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524127318753-btmj4h1748o1ongphkvhrffu5au9ue.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "524127318753-7ah3pkb32f9ov5tiivo4ui0s6vqldvuh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.conexasaude"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524127318753:android:ba03f7840ec2479d197da0",
+        "android_client_info": {
+          "package_name": "br.com.conexasaude.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524127318753-btmj4h1748o1ongpnuhkvhrffu5au9ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqZTYoLNZjjHOuZnKSPd5jIe0Mt74KoIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524127318753-btmj4h1748o1opnuhkvhrffu5au9ue.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "524127318753-7ah3pkb32f9ov5tii4ui0s6vqldvuh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.conexasaude"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524127318753:android:016e13a8da719f56197da0",
+        "android_client_info": {
+          "package_name": "com.appconexa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524127318753-0p23to6pic753osop5a2irmkf7chun1d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appconexa",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "524127318753-btmj4h1748o1ongpnuhkvhrffu5au9ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqZTYoLNZjjHOuZnKSPd5jIe0Mt74KoIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524127318753-btmj4h1748o1ongphkvhrffu5au9ue.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "524127318753-7ah3pkb32f9ov5tvo4ui0s6vqldvuh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.conexasaude"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

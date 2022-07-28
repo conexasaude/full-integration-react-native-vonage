@@ -1,0 +1,22 @@
+{
+  "replaceAttrValues": {
+    "#E6EAF7": "{props.primary100}",
+    "#BFCBEC": "{props.primary200}",
+    "#8098D8": "{props.primary300}",
+    "#4064C5": "{props.primary400}",
+    "#0031B2": "{props.primary500}",
+    "#002A97": "{props.primary600}",
+    "#00227D": "{props.primary700}",
+    "#001B62": "{props.primary800}",
+    "#001447": "{props.primary900}",
+    "#FCE6E6": "{props.secondary100}",
+    "#FACCCC": "{props.secondary200}",
+    "#F7B3B3": "{props.secondary300}",
+    "#F59999": "{props.secondary400}",
+    "#F28080": "{props.secondary500}",
+    "#CE6D6D": "{props.secondary600}",
+    "#A95A5A": "{props.secondary700}",
+    "#854646": "{props.secondary800}",
+    "#613333": "{props.secondary900}"
+  }
+}
