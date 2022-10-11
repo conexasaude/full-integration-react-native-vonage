@@ -1,4 +1,9 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, {
+  FunctionComponent,
+  useEffect,
+  useReducer,
+  useState,
+} from 'react';
 import {
   Platform,
   Text,
@@ -6,6 +11,7 @@ import {
   View,
   ScrollView,
   KeyboardAvoidingView,
+  Linking,
 } from 'react-native';
 
 import axios from 'axios';
@@ -27,17 +33,40 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
   const [urlRoom, setUrlRoom] = useState();
 
   const [loading, setLoading] = useState(false);
-
-
+  const [vonageApiKey, setVonageApiKey] = useState();
+  const body = {};
+  const token =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR09MREVOIiwiZW52IjoiSE1MIn0.8nKQ-obLn-bsOhTjIKozaw7zORu0VtqfbVNxrNOFuYs';
 
   useEffect(() => {
     try {
       apiVonageURL
-        .post('/criar/CONEXA/false')
+        .post('/criar/CONEXA/false', body, { headers: { token } })
         .then((response) => {
           if (response.status === 200) {
             setCallToken(response.data);
             console.log('Token de chamada: ', response.data);
+          } else {
+            console.log(response);
+          }
+        })
+        .catch(() => {
+          setLoading(false);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    // getting the Vonage apiKey
+
+    try {
+      apiVonageURL
+        .get('/apikey', { headers: { token } })
+        .then((response) => {
+          if (response.status === 200) {
+            setVonageApiKey(response.data);
           } else {
             console.log(response);
           }
@@ -84,6 +113,7 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
         id_chamada: callToken,
         tokenParticipante,
         idAtendimento: 123,
+        vonageApiKey,
       });
     }
   };
@@ -99,7 +129,10 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
         style={{ height: 50, width: 50 }}
       />
 
-      <ScrollView contentContainerStyle={styles.mainContainer} style={{ flex: 1 }}>
+      <ScrollView
+        contentContainerStyle={styles.mainContainer}
+        style={{ flex: 1 }}
+      >
         <View
           style={[
             styles.container,
@@ -142,6 +175,21 @@ const SDK: FunctionComponent<any> = ({ navigation, route }) => {
             disabled={loading}
           />
         </View>
+
+        {urlRoom && (
+          <>
+            <Text style={{ marginTop: 20, fontWeight: 'bold' }}>
+              URL DO PROFISSIONAL: {urlRoom}{' '}
+            </Text>
+            <Button
+              onPress={() => Linking.openURL(urlRoom)}
+              fullWidth
+              title={loading ? 'Aguarde' : 'Ir para URL do Profissional'}
+              disabled={loading}
+            />
+          </>
+        )}
+
         <View
           style={[
             styles.btnHelp,

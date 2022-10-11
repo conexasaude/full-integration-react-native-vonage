@@ -45,6 +45,8 @@ export default function Vonage({ route, navigation }) {
 
   let movingAvg = null;
 
+  const apiKey = route.params.vonageApiKey;
+
   useEffect(() => {
     if (micPermission && cameraPermission) {
       credentialsTimeout = setTimeout(() => {
@@ -245,7 +247,9 @@ export default function Vonage({ route, navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      {(sessionId === undefined || token === undefined) && (
+      {(sessionId === undefined ||
+        token === undefined ||
+        apiKey === undefined) && (
         <OverlayLoader loading={!sessionId && !token} style={styles.loader} />
       )}
 
@@ -253,7 +257,7 @@ export default function Vonage({ route, navigation }) {
         {sessionId && token && (
           <OTSession
             style={{ flex: 1 }}
-            apiKey={apiKeyVonage}
+            apiKey={apiKey.toString()}
             sessionId={sessionId}
             token={token}
             eventHandlers={sessionEventHandlers}
